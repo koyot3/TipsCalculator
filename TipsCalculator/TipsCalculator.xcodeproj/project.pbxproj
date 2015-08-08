@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840E0B7D1B7646DD008122EB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 840E0B7C1B7646DD008122EB /* README.md */; };
 		8451E14D1B76441500123D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E14C1B76441500123D85 /* AppDelegate.swift */; };
 		8451E14F1B76441500123D85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E14E1B76441500123D85 /* ViewController.swift */; };
 		8451E1521B76441500123D85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8451E1501B76441500123D85 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840E0B7C1B7646DD008122EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8451E1471B76441500123D85 /* TipsCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8451E14B1B76441500123D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8451E14C1B76441500123D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		8451E14A1B76441500123D85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				840E0B7C1B7646DD008122EB /* README.md */,
 				8451E14B1B76441500123D85 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E0B7D1B7646DD008122EB /* README.md in Sources */,
 				8451E14F1B76441500123D85 /* ViewController.swift in Sources */,
 				8451E14D1B76441500123D85 /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +409,7 @@
 				8451E1681B76441500123D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8451E1691B76441500123D85 /* Build configuration list for PBXNativeTarget "TipsCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				8451E16B1B76441500123D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
