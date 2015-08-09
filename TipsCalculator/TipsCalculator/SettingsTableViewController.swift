@@ -16,6 +16,11 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = UIColor(red: 243.0/255, green: 243.0/255, blue: 243.0/255, alpha: 1)
+        var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
+        if var dict = NSMutableDictionary(contentsOfFile: path!) {
+            currency = dict.objectForKey("Currency") as NSString
+            tipsType = dict.objectForKey("TipsType") as NSString
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,5 +37,19 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Write to plist
+        var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
+        if var dict = NSMutableDictionary(contentsOfFile: path!) {
+            dict.setValue(currency, forKey: "Currency")
+            dict.setValue(tipsType, forKey: "TipsType")
+            dict.writeToFile(path!, atomically: false)
+        }
     }
+    
+    override func tableView(_tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath){
+            NSIndexPath selectedRow = indexPath
+            //for(NSIndex _tableView.indexPathsForVisibleRows()
+
+    }
+    
 }

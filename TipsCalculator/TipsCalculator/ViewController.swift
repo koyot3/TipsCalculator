@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     var tipsRate = 0.0
     var billAmount = 0.0
     
-    var tipsType:NSString!
-    
     var rateDefault:NSUserDefaults!
     
     var myDictOfDict:NSDictionary = [
@@ -34,6 +32,9 @@ class ViewController: UIViewController {
         "salon" : ["name": "Beauty Salon", "rate": 15, "icon": "icon-salon.png"],
         "hotel" : ["name": "Hotel", "rate": 10, "icon": "icon-hotel.png"],
     ];
+    // Read from plist
+    var currency:NSString!
+    var tipsType:NSString!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
         billAmount = rateDefault.doubleForKey("billAmount")
         updateUI()
         updateAmount()
-        // Read the saved bundle
+        // Read the plist 
         
     }
 
