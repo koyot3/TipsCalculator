@@ -14,6 +14,7 @@
 		840E0B871B76565A008122EB /* Smiley-060.png in Resources */ = {isa = PBXBuildFile; fileRef = 840E0B811B76565A008122EB /* Smiley-060.png */; };
 		840E0B881B76565A008122EB /* Smiley-080.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 840E0B821B76565A008122EB /* Smiley-080.jpg */; };
 		840E0B891B76565A008122EB /* Smiley-100.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 840E0B831B76565A008122EB /* Smiley-100.jpeg */; };
+		84416F6D1B775F87005F7AAA /* TipsTypeAndCurrency.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84416F6C1B775F87005F7AAA /* TipsTypeAndCurrency.plist */; };
 		8451E14D1B76441500123D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E14C1B76441500123D85 /* AppDelegate.swift */; };
 		8451E14F1B76441500123D85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E14E1B76441500123D85 /* ViewController.swift */; };
 		8451E1521B76441500123D85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8451E1501B76441500123D85 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		840E0B811B76565A008122EB /* Smiley-060.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Smiley-060.png"; sourceTree = "<group>"; };
 		840E0B821B76565A008122EB /* Smiley-080.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Smiley-080.jpg"; sourceTree = "<group>"; };
 		840E0B831B76565A008122EB /* Smiley-100.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Smiley-100.jpeg"; sourceTree = "<group>"; };
+		84416F6C1B775F87005F7AAA /* TipsTypeAndCurrency.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TipsTypeAndCurrency.plist; sourceTree = "<group>"; };
 		8451E1471B76441500123D85 /* TipsCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8451E14B1B76441500123D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8451E14C1B76441500123D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				840E0B831B76565A008122EB /* Smiley-100.jpeg */,
 				840E0B7C1B7646DD008122EB /* README.md */,
 				8451E14B1B76441500123D85 /* Info.plist */,
+				84416F6C1B775F87005F7AAA /* TipsTypeAndCurrency.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8452D90D1B772F4100763207 /* icon-restaurant.png in Resources */,
+				84416F6D1B775F87005F7AAA /* TipsTypeAndCurrency.plist in Resources */,
 				8451E1521B76441500123D85 /* Main.storyboard in Resources */,
 				840E0B871B76565A008122EB /* Smiley-060.png in Resources */,
 				8451E1571B76441500123D85 /* LaunchScreen.xib in Resources */,

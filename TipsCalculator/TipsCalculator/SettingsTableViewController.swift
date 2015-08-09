@@ -10,6 +10,9 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     
+    var currency:NSString!
+    var tipsType:NSString!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = UIColor(red: 243.0/255, green: 243.0/255, blue: 243.0/255, alpha: 1)
@@ -25,5 +28,9 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
         headerView.textLabel.textColor = UIColor(red: 151.0/255, green: 193.0/255, blue: 100.0/255, alpha: 1)
         let font = UIFont(name: "Montserrat", size: 18.0)
         headerView.textLabel.font = font!
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Write to plist
     }
 }

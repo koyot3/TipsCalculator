@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblTotalAmount: UILabel!
     
     @IBOutlet weak var sldTipsRate: UISlider!
+    @IBOutlet weak var imgEmotion: UIImageView!
+    @IBOutlet weak var barTipsTypeIcon: UIBarButtonItem!
     
 
     var tipsRate = 0.0
@@ -63,7 +65,11 @@ class ViewController: UIViewController {
     @IBAction func updateTipsRate(sender: AnyObject) {
         tipsRate = Double(sldTipsRate.value)
         lblTipsRate.text = String(format: "%.f%%", tipsRate)
+        txtBillAmount.resignFirstResponder()
         updateAmount()
+        // update icon smiley 
+        updateUI()
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -81,6 +87,19 @@ class ViewController: UIViewController {
         txtBillAmount.text = String(format: "%.f", billAmount)
         sldTipsRate.value = Float(tipsRate)
         lblTipsRate.text = String(format: "%.f%%", tipsRate)
+        if(tipsRate < 20){
+            imgEmotion.image = UIImage(named:"Smiley-0.jpg")
+        } else if(tipsRate < 40){
+            imgEmotion.image = UIImage(named:"Smiley-020.jpg")
+        } else if(tipsRate < 60){
+            imgEmotion.image = UIImage(named:"Smiley-040.jpg")
+        } else if(tipsRate < 80){
+            imgEmotion.image = UIImage(named:"Smiley-060.png")
+        } else if(tipsRate < 100){
+            imgEmotion.image = UIImage(named:"Smiley-080.jpg")
+        } else if(tipsRate == 100){
+            imgEmotion.image = UIImage(named:"Smiley-100.jpeg")
+        }
     }
     
 }
