@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>Currency</key>
-	<string>₫</string>
+	<string>0</string>
 	<key>TipsType</key>
-	<string>restaurant</string>
+	<string>0</string>
 </dict>
 </plist>

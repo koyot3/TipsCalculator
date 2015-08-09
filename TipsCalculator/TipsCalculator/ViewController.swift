@@ -20,32 +20,47 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgEmotion: UIImageView!
     @IBOutlet weak var barTipsTypeIcon: UIBarButtonItem!
     
+    @IBOutlet weak var tipsTypeItem: UIBarButtonItem!
 
     var tipsRate = 0.0
     var billAmount = 0.0
     
     var rateDefault:NSUserDefaults!
     
-    var myDictOfDict:NSDictionary = [
-        "restaurant" : ["name": "Restaurant", "rate": 10, "icon": "icon-restaurant.png"],
-        "taxi" : ["name": "Taxi", "rate": 15, "icon": "icon-taxi.png"],
-        "salon" : ["name": "Beauty Salon", "rate": 15, "icon": "icon-salon.png"],
-        "hotel" : ["name": "Hotel", "rate": 10, "icon": "icon-hotel.png"],
+    var tipsType:Int!
+    var tipsTypeDic:NSDictionary!
+    var tipsTypeDics:NSDictionary = [
+        0 : ["name": "Restaurant", "rate": 10, "icon": "icon-restaurant.png"],
+        1 : ["name": "Taxi", "rate": 15, "icon": "icon-taxi.png"],
+        2 : ["name": "Beauty Salon", "rate": 15, "icon": "icon-salon.png"],
+        3 : ["name": "Hotel", "rate": 10, "icon": "icon-hotel.png"],
     ];
-    // Read from plist
-    var currency:NSString!
-    var tipsType:NSString!
+    var currency:Int!
+    var currencyDic:NSDictionary!
+    var currencyDics:NSDictionary = [
+        0 : ["symbol": "đ", "type": 0, "name": "vnd"],
+        1 : ["symbol": "$", "type": 1, "name": "usd"],
+        2 : ["symbol": "€", "type": 1, "name": "jpy"],
+        3 : ["symbol": "¥", "type": 1, "name": "eur"],
+    ];
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Read the reference 
+        // Read the plist
+        var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
+        if var dict = NSMutableDictionary(contentsOfFile: path!) {
+            currency = dict.objectForKey("Currency")?.integerValue
+            tipsType = dict.objectForKey("TipsType")?.integerValue
+            println(currency)
+            tipsTypeDic = tipsTypeDics.objectForKey(tipsType) as NSDictionary
+            currencyDic = currencyDics.objectForKey(currency) as NSDictionary
+        }
+        // Read the reference
         rateDefault = NSUserDefaults()
         tipsRate = rateDefault.doubleForKey("tipsRate")
         billAmount = rateDefault.doubleForKey("billAmount")
         updateUI()
         updateAmount()
-        // Read the plist 
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +79,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func updateTipsRate(sender: AnyObject) {
-        tipsRate = Double(sldTipsRate.value)
+        tipsRate = Double(round(sldTipsRate.value*1)/1)
         lblTipsRate.text = String(format: "%.f%%", tipsRate)
         txtBillAmount.resignFirstResponder()
         updateAmount()
@@ -80,8 +95,18 @@ class ViewController: UIViewController {
     }
     
     func updateAmount(){
-        lblTipsAmount.text = String(format:"%.f", billAmount * tipsRate / 100)
-        lblTotalAmount.text = String(format:"%.f", billAmount * tipsRate / 100 + billAmount)
+        var currencyIntValue = currencyDic.objectForKey("type") as Int
+        var currencySymbolValue = currencyDic.objectForKey("symbol") as NSString
+        var formatString = ""
+        if(currencyIntValue == 1){
+            formatString = "%@%.f"
+            lblTipsAmount.text = String(format:formatString, currencySymbolValue ,billAmount * tipsRate / 100)
+            lblTotalAmount.text = String(format:formatString, currencySymbolValue, billAmount * tipsRate / 100 + billAmount)
+        } else {
+            formatString = "%.f%@"
+            lblTipsAmount.text = String(format:formatString, billAmount * tipsRate / 100, currencySymbolValue)
+            lblTotalAmount.text = String(format:formatString, billAmount * tipsRate / 100 + billAmount, currencySymbolValue)
+        }
     }
     
     func updateUI(){
@@ -101,6 +126,8 @@ class ViewController: UIViewController {
         } else if(tipsRate == 100){
             imgEmotion.image = UIImage(named:"Smiley-100.jpeg")
         }
+        // Update tip bar item
+        tipsTypeItem.title = tipsTypeDic.objectForKey("name") as NSString
     }
     
 }

@@ -10,16 +10,32 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     
-    var currency:NSString!
-    var tipsType:NSString!
+    var currency:Int!
+    var tipsType:Int!
     
+    @IBOutlet var tableConfig: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = UIColor(red: 243.0/255, green: 243.0/255, blue: 243.0/255, alpha: 1)
         var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
         if var dict = NSMutableDictionary(contentsOfFile: path!) {
-            currency = dict.objectForKey("Currency") as NSString
-            tipsType = dict.objectForKey("TipsType") as NSString
+            currency = dict.objectForKey("Currency")?.integerValue
+            tipsType = dict.objectForKey("TipsType")?.integerValue
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if let visibleIndexPaths = tableConfig.indexPathsForVisibleRows() as? [NSIndexPath] {
+            for eachPath in visibleIndexPaths {
+                if(eachPath.section == 1){
+                    if(self.tableView.cellForRowAtIndexPath(eachPath)?.tag == currency){
+                        self.tableView.selectRowAtIndexPath(eachPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+                    }
+                } else if(eachPath.section == 0){
+                    if(self.tableView.cellForRowAtIndexPath(eachPath)?.tag == tipsType){
+                        self.tableView.selectRowAtIndexPath(eachPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+                    }
+                }
+            }
         }
     }
     
@@ -28,13 +44,7 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let headerView = view as UITableViewHeaderFooterView
-        headerView.textLabel.textColor = UIColor(red: 151.0/255, green: 193.0/255, blue: 100.0/255, alpha: 1)
-        let font = UIFont(name: "Montserrat", size: 18.0)
-        headerView.textLabel.font = font!
-    }
-    
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Write to plist
         var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
@@ -47,9 +57,21 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     
     override func tableView(_tableView: UITableView,
         didSelectRowAtIndexPath indexPath: NSIndexPath){
-            NSIndexPath selectedRow = indexPath
-            //for(NSIndex _tableView.indexPathsForVisibleRows()
-
+           var selectedRow = indexPath
+            if let visibleIndexPaths = _tableView.indexPathsForVisibleRows() as? [NSIndexPath] {
+                for eachPath in visibleIndexPaths {
+                    if(selectedRow.section == eachPath.section){
+                        _tableView.deselectRowAtIndexPath(eachPath, animated: true)
+                    }
+                }
+            }
+            _tableView.selectRowAtIndexPath(selectedRow, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+            // store
+            if(selectedRow.section == 0){
+                tipsType = _tableView.cellForRowAtIndexPath(selectedRow)?.tag
+            } else {
+                currency = _tableView.cellForRowAtIndexPath(selectedRow)?.tag
+            }
     }
     
 }
