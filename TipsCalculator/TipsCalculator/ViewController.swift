@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblTotalAmount: UILabel!
     
     @IBOutlet weak var sldTipsRate: UISlider!
+    
 
     var tipsRate = 0.0
     var billAmount = 0.0
@@ -40,5 +41,7 @@ class ViewController: UIViewController {
 
     @IBAction func updateTipsRate(sender: AnyObject) {
     }
+    
+    
 }
 

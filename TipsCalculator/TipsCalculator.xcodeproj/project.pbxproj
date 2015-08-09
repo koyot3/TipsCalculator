@@ -20,6 +20,11 @@
 		8451E1541B76441500123D85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8451E1531B76441500123D85 /* Images.xcassets */; };
 		8451E1571B76441500123D85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8451E1551B76441500123D85 /* LaunchScreen.xib */; };
 		8451E1631B76441500123D85 /* TipsCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451E1621B76441500123D85 /* TipsCalculatorTests.swift */; };
+		8452D90A1B772F4100763207 /* icon-taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 8452D9061B772F4100763207 /* icon-taxi.png */; };
+		8452D90B1B772F4100763207 /* icon-salon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8452D9071B772F4100763207 /* icon-salon.png */; };
+		8452D90C1B772F4100763207 /* icon-hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8452D9081B772F4100763207 /* icon-hotel.png */; };
+		8452D90D1B772F4100763207 /* icon-restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 8452D9091B772F4100763207 /* icon-restaurant.png */; };
+		8452D90F1B77308A00763207 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452D90E1B77308A00763207 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,11 @@
 		8451E15C1B76441500123D85 /* TipsCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8451E1611B76441500123D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8451E1621B76441500123D85 /* TipsCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCalculatorTests.swift; sourceTree = "<group>"; };
+		8452D9061B772F4100763207 /* icon-taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-taxi.png"; sourceTree = "<group>"; };
+		8452D9071B772F4100763207 /* icon-salon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-salon.png"; sourceTree = "<group>"; };
+		8452D9081B772F4100763207 /* icon-hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-hotel.png"; sourceTree = "<group>"; };
+		8452D9091B772F4100763207 /* icon-restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-restaurant.png"; sourceTree = "<group>"; };
+		8452D90E1B77308A00763207 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				8451E14C1B76441500123D85 /* AppDelegate.swift */,
-				8451E14E1B76441500123D85 /* ViewController.swift */,
-				8451E1501B76441500123D85 /* Main.storyboard */,
 				8451E1531B76441500123D85 /* Images.xcassets */,
 				8451E1551B76441500123D85 /* LaunchScreen.xib */,
+				8451E1501B76441500123D85 /* Main.storyboard */,
+				8452D90E1B77308A00763207 /* SettingsTableViewController.swift */,
+				8451E14E1B76441500123D85 /* ViewController.swift */,
 				8451E14A1B76441500123D85 /* Supporting Files */,
 			);
 			path = TipsCalculator;
@@ -104,6 +115,10 @@
 		8451E14A1B76441500123D85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8452D9061B772F4100763207 /* icon-taxi.png */,
+				8452D9071B772F4100763207 /* icon-salon.png */,
+				8452D9081B772F4100763207 /* icon-hotel.png */,
+				8452D9091B772F4100763207 /* icon-restaurant.png */,
 				840E0B7E1B76565A008122EB /* Smiley-0.jpg */,
 				840E0B7F1B76565A008122EB /* Smiley-020.jpg */,
 				840E0B801B76565A008122EB /* Smiley-040.jpg */,
@@ -213,15 +228,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8452D90D1B772F4100763207 /* icon-restaurant.png in Resources */,
 				8451E1521B76441500123D85 /* Main.storyboard in Resources */,
 				840E0B871B76565A008122EB /* Smiley-060.png in Resources */,
 				8451E1571B76441500123D85 /* LaunchScreen.xib in Resources */,
+				8452D90C1B772F4100763207 /* icon-hotel.png in Resources */,
+				8452D90A1B772F4100763207 /* icon-taxi.png in Resources */,
 				8451E1541B76441500123D85 /* Images.xcassets in Resources */,
 				840E0B861B76565A008122EB /* Smiley-040.jpg in Resources */,
 				840E0B881B76565A008122EB /* Smiley-080.jpg in Resources */,
 				840E0B891B76565A008122EB /* Smiley-100.jpeg in Resources */,
 				840E0B841B76565A008122EB /* Smiley-0.jpg in Resources */,
 				840E0B851B76565A008122EB /* Smiley-020.jpg in Resources */,
+				8452D90B1B772F4100763207 /* icon-salon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8452D90F1B77308A00763207 /* SettingsTableViewController.swift in Sources */,
 				840E0B7D1B7646DD008122EB /* README.md in Sources */,
 				8451E14F1B76441500123D85 /* ViewController.swift in Sources */,
 				8451E14D1B76441500123D85 /* AppDelegate.swift in Sources */,
