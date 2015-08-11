@@ -1,5 +1,5 @@
 # TipsCalculator
-Time spent: 20h 
+Time spent: 10h 
 
 Completed:
 
@@ -14,3 +14,9 @@ Completed:
 Story: 
 I had to finish this assignment twice. That's kind of my bad when I did not use any Source Control for the 1st time. My Hackintosh didn't work well so my source code is gone! My most lesson to be learned (except the Swift knowledge) is "DON'T FORGET GITHUB, IT CAN SAVE YOUR LIFE!"
 I can't wait for our bootcamp!
+
+Walkthrough of all user stories:
+
+![Video Walkthrough](Hoang-TipsCalculator.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
