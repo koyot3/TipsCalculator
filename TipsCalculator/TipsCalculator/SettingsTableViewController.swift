@@ -14,6 +14,9 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     var tipsType:Int!
     
     @IBOutlet var tableConfig: UITableView!
+    
+    var rateDefault:NSUserDefaults!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
@@ -51,7 +54,14 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
         if var dict = NSMutableDictionary(contentsOfFile: path!) {
             dict.setValue(currency, forKey: "Currency")
             dict.setValue(tipsType, forKey: "TipsType")
+            //
+            dict.setValue(true, forKey: "FromSettings")
             dict.writeToFile(path!, atomically: false)
+            //
+            rateDefault = NSUserDefaults()
+            rateDefault.setBool(true,forKey: "FromSettings")
+            rateDefault.synchronize()
+
         }
     }
     

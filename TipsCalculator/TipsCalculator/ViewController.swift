@@ -44,6 +44,8 @@ class ViewController: UIViewController {
         3 : ["symbol": "¥", "type": 1, "name": "eur"],
     ];
     
+    var isFromSettings:Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Read the plist
@@ -51,13 +53,20 @@ class ViewController: UIViewController {
         if var dict = NSMutableDictionary(contentsOfFile: path!) {
             currency = dict.objectForKey("Currency")?.integerValue
             tipsType = dict.objectForKey("TipsType")?.integerValue
-            println(currency)
+
             tipsTypeDic = tipsTypeDics.objectForKey(tipsType) as NSDictionary
             currencyDic = currencyDics.objectForKey(currency) as NSDictionary
         }
         // Read the reference
         rateDefault = NSUserDefaults()
-        tipsRate = rateDefault.doubleForKey("tipsRate")
+        isFromSettings = rateDefault.boolForKey("FromSettings")
+        if(isFromSettings == true)
+        {
+            tipsRate = tipsTypeDic.objectForKey("rate") as Double
+            isFromSettings = false
+        } else {
+            tipsRate = rateDefault.doubleForKey("tipsRate")
+        }
         billAmount = rateDefault.doubleForKey("billAmount")
         updateUI()
         updateAmount()
@@ -91,6 +100,7 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         rateDefault.setDouble(tipsRate, forKey: "tipsRate")
         rateDefault.setDouble(billAmount, forKey: "billAmount")
+        rateDefault.setBool(false, forKey: "FromSettings")
         rateDefault.synchronize()
     }
     
