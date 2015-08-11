@@ -18,6 +18,6 @@ I can't wait for our bootcamp!
 
 Walkthrough of all user stories:
 
-![Video Walkthrough](Hoang-TipsCalculator.gif)
+![Video Walkthrough](https://github.com/koyot3/TipsCalculator/blob/master/TipsCalculator/TipsCalculator/Hoang-TipsCalculator.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
