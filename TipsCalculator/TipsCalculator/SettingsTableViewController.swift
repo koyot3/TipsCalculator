@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController, UITableViewDelegate {
+class SettingsTableViewController: UITableViewController {
     
     var currency:Int!
     var tipsType:Int!
@@ -19,15 +19,15 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
-        if var dict = NSMutableDictionary(contentsOfFile: path!) {
+        let path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
+        if let dict = NSMutableDictionary(contentsOfFile: path!) {
             currency = dict.objectForKey("Currency")?.integerValue
             tipsType = dict.objectForKey("TipsType")?.integerValue
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let visibleIndexPaths = tableConfig.indexPathsForVisibleRows() as? [NSIndexPath] {
+        if let visibleIndexPaths = tableConfig.indexPathsForVisibleRows {
             for eachPath in visibleIndexPaths {
                 if(eachPath.section == 1){
                     if(self.tableView.cellForRowAtIndexPath(eachPath)?.tag == currency){
@@ -50,8 +50,8 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Write to plist
-        var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
-        if var dict = NSMutableDictionary(contentsOfFile: path!) {
+        let path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
+        if let dict = NSMutableDictionary(contentsOfFile: path!) {
             dict.setValue(currency, forKey: "Currency")
             dict.setValue(tipsType, forKey: "TipsType")
             //
@@ -68,7 +68,7 @@ class SettingsTableViewController: UITableViewController, UITableViewDelegate {
     override func tableView(_tableView: UITableView,
         didSelectRowAtIndexPath indexPath: NSIndexPath){
            var selectedRow = indexPath
-            if let visibleIndexPaths = _tableView.indexPathsForVisibleRows() as? [NSIndexPath] {
+            if let visibleIndexPaths = _tableView.indexPathsForVisibleRows {
                 for eachPath in visibleIndexPaths {
                     if(selectedRow.section == eachPath.section){
                         _tableView.deselectRowAtIndexPath(eachPath, animated: true)

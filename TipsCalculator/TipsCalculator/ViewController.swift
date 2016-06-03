@@ -54,15 +54,15 @@ class ViewController: UIViewController {
             currency = dict.objectForKey("Currency")?.integerValue
             tipsType = dict.objectForKey("TipsType")?.integerValue
 
-            tipsTypeDic = tipsTypeDics.objectForKey(tipsType) as NSDictionary
-            currencyDic = currencyDics.objectForKey(currency) as NSDictionary
+            tipsTypeDic = tipsTypeDics.objectForKey(tipsType) as! NSDictionary
+            currencyDic = currencyDics.objectForKey(currency) as! NSDictionary
         }
         // Read the reference
         rateDefault = NSUserDefaults()
         isFromSettings = rateDefault.boolForKey("FromSettings")
         if(isFromSettings == true)
         {
-            tipsRate = tipsTypeDic.objectForKey("rate") as Double
+            tipsRate = tipsTypeDic.objectForKey("rate") as! Double
             isFromSettings = false
         } else {
             tipsRate = rateDefault.doubleForKey("tipsRate")
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     @IBAction func updateBillAmount(sender: AnyObject) {
         if(txtBillAmount.text != "")
         {
-            billAmount = (txtBillAmount.text as NSString).doubleValue
+            billAmount = (txtBillAmount.text! as NSString).doubleValue
         } else{
             billAmount = 0.0
         }
@@ -105,8 +105,8 @@ class ViewController: UIViewController {
     }
     
     func updateAmount(){
-        var currencyIntValue = currencyDic.objectForKey("type") as Int
-        var currencySymbolValue = currencyDic.objectForKey("symbol") as NSString
+        var currencyIntValue = currencyDic.objectForKey("type") as! Int
+        var currencySymbolValue = currencyDic.objectForKey("symbol") as! NSString
         var formatString = ""
         if(currencyIntValue == 1){
             formatString = "%@%.f"
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
             imgEmotion.image = UIImage(named:"Smiley-100.jpeg")
         }
         // Update tip bar item
-        tipsTypeItem.title = tipsTypeDic.objectForKey("name") as NSString
+        tipsTypeItem.title = tipsTypeDic.objectForKey("name") as! NSString as String
     }
     
 }
