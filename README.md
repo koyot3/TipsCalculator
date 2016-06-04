@@ -10,15 +10,13 @@ Completed:
 * [x] Optional: Using locale-specific currency and currency thousands separators.
 * [x] Optional: Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 * [x] Optional: I don't apply the above optional implementation because I use Slider to update the rate. The Smiley icon makes my users more fun. The more tips the happier you are, but if the tips rate is zero, you are still smiley because you're professional and gentle.
+* [x] Optional: Fix bug auto-layout for my emotion icon and using Current Locale for currency.
 
 Story: 
-
-I had to finish this assignment twice. That's kind of my bad when I did not use any Source Control for the 1st time. My Hackintosh didn't work well so my source code is gone! My most lesson to be learned (except the Swift knowledge) is "DON'T FORGET GITHUB, IT CAN SAVE YOUR LIFE!"
-I can't wait for our bootcamp!
+I have another story for it! (and I also had one for previous TipsCalculator) Hope you still remembered I’m using Hackintosh for coding. Unfortunately it had “overheat” decease, now I know what hot fix is. Even I doubt that this submission is overdue, hope is free and I don’t want to waste a chance to get into amazing SELECT course. 
 
 Walkthrough of all user stories:
 
 ![Video Walkthrough](TipsCalculator/TipsCalculator/vietnam-demo.gif)
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ![Video Walkthrough](TipsCalculator/TipsCalculator/usa-demo.gif)
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
