@@ -18,6 +18,6 @@ I can't wait for our bootcamp!
 
 Walkthrough of all user stories:
 
-![Video Walkthrough](vietnamese-demo.gif)
-![Video Walkthrough](usa-demo.gif)
+![Video Walkthrough](TipsCalculator/TipsCalculator/vietnamese-demo.gif)
+![Video Walkthrough](TipsCalculator/TipsCalculator/usa-demo.gif)
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
