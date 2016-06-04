@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sldTipsRate: UISlider!
     @IBOutlet weak var imgEmotion: UIImageView!
-    @IBOutlet weak var barTipsTypeIcon: UIBarButtonItem!
     
     @IBOutlet weak var tipsTypeItem: UIBarButtonItem!
 
@@ -30,18 +29,10 @@ class ViewController: UIViewController {
     var tipsType:Int!
     var tipsTypeDic:NSDictionary!
     var tipsTypeDics:NSDictionary = [
-        0 : ["name": "Restaurant", "rate": 10, "icon": "icon-restaurant.png"],
-        1 : ["name": "Taxi", "rate": 15, "icon": "icon-taxi.png"],
-        2 : ["name": "Beauty Salon", "rate": 15, "icon": "icon-salon.png"],
-        3 : ["name": "Hotel", "rate": 10, "icon": "icon-hotel.png"],
-    ];
-    var currency:Int!
-    var currencyDic:NSDictionary!
-    var currencyDics:NSDictionary = [
-        0 : ["symbol": "đ", "type": 0, "name": "vnd"],
-        1 : ["symbol": "$", "type": 1, "name": "usd"],
-        2 : ["symbol": "€", "type": 1, "name": "jpy"],
-        3 : ["symbol": "¥", "type": 1, "name": "eur"],
+        0 : ["name": "Restaurant", "rate": 10, "icon": "restaurant"],
+        1 : ["name": "Taxi", "rate": 15, "icon": "delivery"],
+        2 : ["name": "Hotel", "rate": 10, "icon": "hotel"],
+        3 : ["name": "Beauty Salon", "rate": 15, "icon": "housekeeping"],
     ];
     
     var isFromSettings:Bool!
@@ -49,13 +40,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Read the plist
-        var path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
-        if var dict = NSMutableDictionary(contentsOfFile: path!) {
-            currency = dict.objectForKey("Currency")?.integerValue
+        let path = NSBundle.mainBundle().pathForResource("TipsTypeAndCurrency", ofType: "plist")
+        if let dict = NSMutableDictionary(contentsOfFile: path!) {
             tipsType = dict.objectForKey("TipsType")?.integerValue
 
             tipsTypeDic = tipsTypeDics.objectForKey(tipsType) as! NSDictionary
-            currencyDic = currencyDics.objectForKey(currency) as! NSDictionary
         }
         // Read the reference
         rateDefault = NSUserDefaults()
@@ -70,6 +59,10 @@ class ViewController: UIViewController {
         billAmount = rateDefault.doubleForKey("billAmount")
         updateUI()
         updateAmount()
+        //
+        //tipsTypeItem.setBackButtonBackgroundImage(UIImageHelper.getImageFromName("restaurant"), forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
+        //create a new button
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,18 +98,18 @@ class ViewController: UIViewController {
     }
     
     func updateAmount(){
-        var currencyIntValue = currencyDic.objectForKey("type") as! Int
-        var currencySymbolValue = currencyDic.objectForKey("symbol") as! NSString
-        var formatString = ""
-        if(currencyIntValue == 1){
-            formatString = "%@%.f"
-            lblTipsAmount.text = String(format:formatString, currencySymbolValue ,billAmount * tipsRate / 100)
-            lblTotalAmount.text = String(format:formatString, currencySymbolValue, billAmount * tipsRate / 100 + billAmount)
-        } else {
-            formatString = "%.f%@"
-            lblTipsAmount.text = String(format:formatString, billAmount * tipsRate / 100, currencySymbolValue)
-            lblTotalAmount.text = String(format:formatString, billAmount * tipsRate / 100 + billAmount, currencySymbolValue)
+        //
+        let formatter = NSNumberFormatter()
+        
+        for locale in NSLocale.availableLocaleIdentifiers() {
+            formatter.locale = NSLocale(localeIdentifier: locale)
+            //print("\(formatter.currencyCode) =  \(formatter.currencySymbol)")
         }
+        //
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        let formatString = "%@"
+        lblTipsAmount.text = String(format:formatString, formatter.stringFromNumber(billAmount * tipsRate / 100)!)
+        lblTotalAmount.text = String(format:formatString, formatter.stringFromNumber(billAmount * tipsRate / 100 + billAmount)!)
     }
     
     func updateUI(){
@@ -124,20 +117,50 @@ class ViewController: UIViewController {
         sldTipsRate.value = Float(tipsRate)
         lblTipsRate.text = String(format: "%.f%%", tipsRate)
         if(tipsRate < 20){
-            imgEmotion.image = UIImage(named:"Smiley-0.jpg")
+            UIView.animateWithDuration(0.4, animations: {
+                // This causes first view to fade in and second view to fade out
+                self.imgEmotion.alpha = 0
+                self.imgEmotion.image = UIImage(named:"Smiley-0.jpg")
+                self.imgEmotion.alpha = 1
+            })
         } else if(tipsRate < 40){
-            imgEmotion.image = UIImage(named:"Smiley-020.jpg")
+            UIView.animateWithDuration(0.4, animations: {
+                // This causes first view to fade in and second view to fade out
+                self.imgEmotion.alpha = 0
+                self.imgEmotion.image = UIImage(named:"Smiley-020.jpg")
+                self.imgEmotion.alpha = 1
+            })
         } else if(tipsRate < 60){
-            imgEmotion.image = UIImage(named:"Smiley-040.jpg")
+            UIView.animateWithDuration(0.4, animations: {
+                // This causes first view to fade in and second view to fade out
+                self.imgEmotion.alpha = 0
+                self.imgEmotion.image = UIImage(named:"Smiley-040.jpg")
+                self.imgEmotion.alpha = 1
+            })
         } else if(tipsRate < 80){
-            imgEmotion.image = UIImage(named:"Smiley-060.png")
+            UIView.animateWithDuration(0.4, animations: {
+                // This causes first view to fade in and second view to fade out
+                self.imgEmotion.alpha = 0
+                self.imgEmotion.image = UIImage(named:"Smiley-060.png")
+                self.imgEmotion.alpha = 1
+            })
         } else if(tipsRate < 100){
-            imgEmotion.image = UIImage(named:"Smiley-080.jpg")
+            UIView.animateWithDuration(0.4, animations: {
+                // This causes first view to fade in and second view to fade out
+                self.imgEmotion.alpha = 0
+                self.imgEmotion.image = UIImage(named:"Smiley-080.jpg")
+                self.imgEmotion.alpha = 1
+            })
         } else if(tipsRate == 100){
-            imgEmotion.image = UIImage(named:"Smiley-100.jpeg")
+            UIView.animateWithDuration(0.4, animations: {
+                // This causes first view to fade in and second view to fade out
+                self.imgEmotion.alpha = 0
+                self.imgEmotion.image = UIImage(named:"Smiley-100.jpeg")
+                self.imgEmotion.alpha = 1
+            })
         }
-        // Update tip bar item
-        tipsTypeItem.title = tipsTypeDic.objectForKey("name") as! NSString as String
+        //let image = UIImageHelper.resizeImage(UIImage.init(named: "restaurant")!, newWidth: 30, newHeight: 30)
+        //tipsTypeItem.setBackgroundImage(image, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
     }
     
 }

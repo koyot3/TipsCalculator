@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DAE98DFDE76BD9D12DEB37C /* libPods-TipsCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3BF9E0F0F7658FFE2CE6B3 /* libPods-TipsCalculator.a */; };
+		41592CD24550521FAB893833 /* Pods_TipsCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891AE3B0BC4BC059713358F6 /* Pods_TipsCalculator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		840E0B7D1B7646DD008122EB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 840E0B7C1B7646DD008122EB /* README.md */; };
 		840E0B841B76565A008122EB /* Smiley-0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 840E0B7E1B76565A008122EB /* Smiley-0.jpg */; };
 		840E0B851B76565A008122EB /* Smiley-020.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 840E0B7F1B76565A008122EB /* Smiley-020.jpg */; };
@@ -28,6 +28,10 @@
 		8452D90C1B772F4100763207 /* icon-hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8452D9081B772F4100763207 /* icon-hotel.png */; };
 		8452D90D1B772F4100763207 /* icon-restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 8452D9091B772F4100763207 /* icon-restaurant.png */; };
 		8452D90F1B77308A00763207 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452D90E1B77308A00763207 /* SettingsTableViewController.swift */; };
+		849A62E71D0267480027A487 /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A62E61D0267480027A487 /* UIImageHelper.swift */; };
+		849A62EA1D0272F20027A487 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A62E81D0272F20027A487 /* VenueCell.swift */; };
+		849A62EB1D0272F20027A487 /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849A62E91D0272F20027A487 /* VenueCell.xib */; };
+		84CE483F1D031CD400F5F8F3 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE483E1D031CD400F5F8F3 /* PlistHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F3BF9E0F0F7658FFE2CE6B3 /* libPods-TipsCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TipsCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		840E0B7C1B7646DD008122EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		840E0B7E1B76565A008122EB /* Smiley-0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Smiley-0.jpg"; sourceTree = "<group>"; };
 		840E0B7F1B76565A008122EB /* Smiley-020.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Smiley-020.jpg"; sourceTree = "<group>"; };
@@ -66,6 +69,11 @@
 		8452D9081B772F4100763207 /* icon-hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-hotel.png"; sourceTree = "<group>"; };
 		8452D9091B772F4100763207 /* icon-restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-restaurant.png"; sourceTree = "<group>"; };
 		8452D90E1B77308A00763207 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		849A62E61D0267480027A487 /* UIImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageHelper.swift; sourceTree = "<group>"; };
+		849A62E81D0272F20027A487 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
+		849A62E91D0272F20027A487 /* VenueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCell.xib; sourceTree = "<group>"; };
+		84CE483E1D031CD400F5F8F3 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
+		891AE3B0BC4BC059713358F6 /* Pods_TipsCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipsCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB176C453A3E5F8679E9D3F6 /* Pods-TipsCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipsCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipsCalculator/Pods-TipsCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBD98049826BF71DE6CAE24 /* Pods-TipsCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipsCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipsCalculator/Pods-TipsCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DAE98DFDE76BD9D12DEB37C /* libPods-TipsCalculator.a in Frameworks */,
+				41592CD24550521FAB893833 /* Pods_TipsCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +120,7 @@
 		8451E1491B76441500123D85 /* TipsCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				849A62E51D0267230027A487 /* Ultilities */,
 				8451E14C1B76441500123D85 /* AppDelegate.swift */,
 				8451E1531B76441500123D85 /* Images.xcassets */,
 				8451E1551B76441500123D85 /* LaunchScreen.xib */,
@@ -119,6 +128,8 @@
 				8452D90E1B77308A00763207 /* SettingsTableViewController.swift */,
 				8451E14E1B76441500123D85 /* ViewController.swift */,
 				8451E14A1B76441500123D85 /* Supporting Files */,
+				849A62E81D0272F20027A487 /* VenueCell.swift */,
+				849A62E91D0272F20027A487 /* VenueCell.xib */,
 			);
 			path = TipsCalculator;
 			sourceTree = "<group>";
@@ -161,6 +172,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		849A62E51D0267230027A487 /* Ultilities */ = {
+			isa = PBXGroup;
+			children = (
+				849A62E61D0267480027A487 /* UIImageHelper.swift */,
+				84CE483E1D031CD400F5F8F3 /* PlistHelper.swift */,
+			);
+			name = Ultilities;
+			sourceTree = "<group>";
+		};
 		9C660895492E3890EA4119A1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +193,7 @@
 		D1587C9DE1D338D24378E118 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F3BF9E0F0F7658FFE2CE6B3 /* libPods-TipsCalculator.a */,
+				891AE3B0BC4BC059713358F6 /* Pods_TipsCalculator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +210,7 @@
 				8451E1441B76441500123D85 /* Frameworks */,
 				8451E1451B76441500123D85 /* Resources */,
 				F3E13CDE69DFAA2A9FE07F85 /* Copy Pods Resources */,
+				4C3B78BB3CD91B05386E4771 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8452D90D1B772F4100763207 /* icon-restaurant.png in Resources */,
+				849A62EB1D0272F20027A487 /* VenueCell.xib in Resources */,
 				84416F6D1B775F87005F7AAA /* TipsTypeAndCurrency.plist in Resources */,
 				8451E1521B76441500123D85 /* Main.storyboard in Resources */,
 				840E0B871B76565A008122EB /* Smiley-060.png in Resources */,
@@ -290,6 +312,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C3B78BB3CD91B05386E4771 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TipsCalculator/Pods-TipsCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		780A241C86E33947FC328C6B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,8 +365,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8452D90F1B77308A00763207 /* SettingsTableViewController.swift in Sources */,
+				849A62E71D0267480027A487 /* UIImageHelper.swift in Sources */,
 				840E0B7D1B7646DD008122EB /* README.md in Sources */,
+				849A62EA1D0272F20027A487 /* VenueCell.swift in Sources */,
 				8451E14F1B76441500123D85 /* ViewController.swift in Sources */,
+				84CE483F1D031CD400F5F8F3 /* PlistHelper.swift in Sources */,
 				8451E14D1B76441500123D85 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
