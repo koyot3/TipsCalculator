@@ -100,11 +100,7 @@ class ViewController: UIViewController {
     func updateAmount(){
         //
         let formatter = NSNumberFormatter()
-        
-        for locale in NSLocale.availableLocaleIdentifiers() {
-            formatter.locale = NSLocale(localeIdentifier: locale)
-            //print("\(formatter.currencyCode) =  \(formatter.currencySymbol)")
-        }
+        formatter.locale = NSLocale.currentLocale()
         //
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         let formatString = "%@"
